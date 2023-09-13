@@ -1,0 +1,13 @@
+.wrapper {
+    background-image: url("images/car.jpg");
+    max-width: 1600px;
+  height: 550px;
+  padding: 20px 0 0px 0; 
+
+  margin-left: auto;
+  margin-right: auto;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;;
+}
