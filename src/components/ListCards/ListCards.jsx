@@ -1,17 +1,25 @@
 
 // import PropTypes from 'prop-types';
 import CardCar from '../CardCar/CardCar';
-import items from '../../advertsCars.json';
+import css from "./ListCards.module.css";
 
-const ListCards = ({  }) => {
+const ListCards = ({ items, 
+  // onChangeFavoriteArrey 
+}) => {
+
+  // const onFavoriteArrey = (myArray) => {
+  //   onChangeFavoriteArrey()
+  // }
  
   const elements = items.map(item => (
-    <CardCar key={item.id} {...item} />
+    <CardCar key={item.id} {...item} 
+    // onChangeFavoriteArrey={onFavoriteArrey}
+    />
   ));
 
   return (
     <>
-      <ul>{elements}</ul>
+      <ul className={css.wrapper}>{elements}</ul>
     </>
   );
 };

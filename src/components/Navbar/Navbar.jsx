@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 
 import styles from "./Navbar.module.css";
 
+
 import items from "./items";
 
 // const getFullName = ({isActive}) => {
@@ -14,9 +15,11 @@ const Navbar = ()=> {
     </li>);
 
     return (
+        <div className={styles.wrapper}>
         <ul className={styles.menu}>
             {elements}
         </ul>
+        </div>
     )
 }
 

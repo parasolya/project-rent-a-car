@@ -1,0 +1,17 @@
+.formList {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 100px 50px;
+}
+
+.formItem {
+    width: 200px;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 1200px;
+}
