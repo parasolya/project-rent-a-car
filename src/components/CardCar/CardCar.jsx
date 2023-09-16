@@ -3,22 +3,25 @@ import { useState } from 'react';
 import css from "./CardCar.module.css";
 
 
-const CardCar = ( item,
-  //  onChangeFavoriteArrey 
+
+const CardCar = ( { id, img, address, model, year, rentalPrice, rentalCompany, type, make, mileage, onChangeFavoriteArrey, getLearnMore }
    ) => {
   
-  const img = item.img || item.photoLink;
-
-  const arrayAddress = item.address.split(",");
+  const arrayAddress = address.split(",");
   const country = arrayAddress[arrayAddress.length - 1];
   const city = arrayAddress[arrayAddress.length - 2];
 
-  const onLearnMore = (id) => {}
-
-  // 
-  const [itemFavorite, setItemFavorite] = useState(false); 
-  
+  const [itemFavorite, setItemFavorite] = useState(false);   
   const [buttonColor, setButtonColor] = useState('white'); 
+ 
+
+ 
+
+  const onLearnMore = (id) => {
+    getLearnMore(id);
+  };
+
+  // Favorite 
 
   const localStorageData = localStorage.getItem('favorite');
   
@@ -29,13 +32,13 @@ const CardCar = ( item,
     myArray = JSON.parse(localStorageData);
   };
 
-  function isObjectWithIdExists(item) {
+  function isObjectWithIdExists(id) {
     if (Array.isArray(myArray)) {            
-    return myArray.some((i) => i.id === item.id);
+    return myArray.some((i) => i.id === id);
   } else {return false};
   };
 
-  if (isObjectWithIdExists(item)) {
+  if (isObjectWithIdExists(id)) {
     if (!itemFavorite) {
       setItemFavorite(true);
       setButtonColor('red');
@@ -47,7 +50,7 @@ const CardCar = ( item,
     }
   }
 
-  function toggleObjectWithId(item) {
+  function toggleObjectWithId(id) {
     let myArray = [];
 
     const localStorageData = localStorage.getItem('favorite');
@@ -56,14 +59,17 @@ const CardCar = ( item,
       myArray = JSON.parse(localStorageData);
     }
   
-    if (isObjectWithIdExists(item)) {
+    if (isObjectWithIdExists(id)) {
       // Якщо об'єкт існує, то видаляємо його з масиву
-      myArray = myArray.filter((i) => i.id !== item.id);
+      myArray = myArray.filter((i) => i.id !== id);
       setItemFavorite(false);
       setButtonColor('white');
     } else {
       // Якщо об'єкта немає, то додаємо його до масиву
-      const newObject = item;
+      const newObject = {
+        id, img, address, model, year, rentalPrice, rentalCompany, type, make, mileage,
+      };
+      console.log(newObject);
       myArray.push(newObject);
       setItemFavorite(true);
       setButtonColor('red');
@@ -72,7 +78,7 @@ const CardCar = ( item,
     // Зберігаємо оновлений масив у локальному сховищі
     
     localStorage.setItem('favorite', JSON.stringify(myArray));   
-    // onChangeFavoriteArrey(item);
+    onChangeFavoriteArrey(id);
   };
 
    return (
@@ -80,27 +86,28 @@ const CardCar = ( item,
        <img className={css.cardImg} src={img} alt="car"/> 
      <div>
         <div>
-        <h2>{`${item.model}, ${item.year}`}</h2>
-         <p>{item.rentalPrice}</p>
+        <h2>{`${model}, ${year}`}</h2>
+         <p>{rentalPrice}</p>
          </div>
          <div>
-           <p>{city}<span>|</span>{country}<span>|</span>{item.rentalCompany}</p>
-           <p>{item.type}<span>|</span>{item.make}<span>|</span>{item.mileage}<span>|</span>{}</p>
+           <p>{city}<span>|</span>{country}<span>|</span>{rentalCompany}</p>
+           <p>{type}<span>|</span>{make}<span>|</span>{mileage}<span>|</span>{}</p>
         </div>
      </div>
       <div>   
-          <button onClick={() => onLearnMore(item.id)}>Learn more</button>   
+          <button onClick={() => onLearnMore(id)}>Learn more</button>   
   
     </div>
     <div>   
     <button   
         style={{ backgroundColor: buttonColor }}
-        onClick={() => toggleObjectWithId(item)}
+        onClick={() => toggleObjectWithId(id)}
       >
         Hart
       </button>  
   
     </div>
+   
     </div>
   );
 };

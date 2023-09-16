@@ -1,6 +1,6 @@
 import { useState } from 'react';
 // import { SelectForm } from '../SelectForm/SelectForm';
-
+import addCommas from "../../../shared/addCommas"
 import css from './CatalogForm.module.css';
 import Select from 'react-select';
 
@@ -92,7 +92,7 @@ const CatalogForm = ({ onSubmit, optionsCarBrand, optionsCarPrice }) => {
               name="from"
               required
               type="text"
-              value={fromValue}
+              value={addCommas(fromValue)}
               onChange={e => {
                 handleInputChange(e);
               }}
@@ -106,15 +106,15 @@ const CatalogForm = ({ onSubmit, optionsCarBrand, optionsCarPrice }) => {
               //   pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
               // title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
               type="text"
-              value={toValue}
+              value={addCommas(toValue)} 
               onChange={e => {
                 handleInputChange(e);
               }}
             />
           </li>
-        </ul>
-        <div></div>
-        <button type="submit">Submit</button>
+          <li><button type="submit">Submit</button></li>
+        </ul>       
+        
       </form>
     </div>
   );

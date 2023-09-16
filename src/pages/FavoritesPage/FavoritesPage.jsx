@@ -1,46 +1,59 @@
-import { useState, useEffect } from 'react';
-// import CatalogForm from '../../components/Form/CatalogForm/CatalogForm';
-import ListCards from "../../components/ListCards/ListCards";
+import { useState } from 'react';
+
+import ListCards from '../../components/ListCards/ListCards';
+import CatalogForm from '../../components/Form/CatalogForm/CatalogForm';
 
 const FavoritesPage = () => {
-    const [favoriteArray, setFavoriteArray] = useState(
-      () => JSON.parse(localStorage.getItem('favorite')) ?? []
+  const [favoriteArray, setFavoriteArray] = useState(
+    () => JSON.parse(localStorage.getItem('favorite')) ?? []
+  );
+
+  const carFavorite = [...new Set(favoriteArray.map(car => car.make))];
+  const optionsCarBrand = carFavorite.map(make => ({
+    label: make,
+    value: make,
+  }));
+  //   можна винести
+  const carPrice = [];
+  for (let i = 10; i <= 100; i += 10) {
+    carPrice.push(i);
+  }
+  const optionsCarPrice = carPrice.map(make => ({ label: make, value: make }));
+  //
+  const formSubmitCatalog = data => {
+    const filterObject = data;
+
+    const filteredArray = favoriteArray.filter(
+      item =>
+        item.make === filterObject.make &&
+        item.rentalPrice <= filterObject.rentalPrice &&
+        item.mileage >= parseInt(filterObject.from, 10) &&
+        item.mileage <= parseInt(filterObject.to, 10)
     );
-  
-        useEffect(() => {
-        // Функція, яка буде викликана при зміні localStorage
-        const handleStorageChange = (e) => {
-          if (e.key === 'favorite') {
-            const updatedFavoriteArray = JSON.parse(e.newValue);
-            setFavoriteArray(updatedFavoriteArray);
-          }
-        };
-    
-        // Додаємо "слухача" для події зміни localStorage
-        window.addEventListener('storage', handleStorageChange);
-    
-        // При відмонтажі компонента видаляємо "слухача"
-        return () => {
-          window.removeEventListener('storage', handleStorageChange);
-        };
-      }, []);
+    console.log(filteredArray);
+    setFavoriteArray(filteredArray);
+  };
 
- 
-return (
-        <div>
-    <h1>FavoritesPage</h1>
+  const changeFavorite = id => {
+    const updatedArray = favoriteArray.filter(i => i.id !== id);
+    setFavoriteArray(updatedArray);
+  };
 
+  return (
     <div>
-        {/* <CatalogForm onSubmit={formSubmitCatalog} optionsCarBrand={optionsCarBrand} optionsCarPrice={optionsCarPrice} /> */}
-    </div>     
+      <h1>FavoritesPage</h1>
 
+      <div>
+        <CatalogForm
+          onSubmit={formSubmitCatalog}
+          optionsCarBrand={optionsCarBrand}
+          optionsCarPrice={optionsCarPrice}
+        />
+      </div>
 
-    <ListCards items={favoriteArray} 
-    // onChangeFavoriteArrey={changeFavorite} 
-    />
-
+      <ListCards items={favoriteArray} onChangeFavoriteArrey={changeFavorite} />
     </div>
-    )
-}
+  );
+};
 
 export default FavoritesPage;
