@@ -175,6 +175,11 @@ border: none;
   outline: none;
 }
 
+.btnRent:hover,
+.btnRent:focus {
+  background-color: #0B44CD;
+}
+
 .accentСolor {
   color: #3470FF;
 }

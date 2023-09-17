@@ -19,9 +19,7 @@ const ListCards = ({ items, onChangeFavoriteArrey }) => {
     
     const fetchData = async () => {
       try {        
-        const car = await fetchCarById(id);
-        console.log(`тут ${car}`);
-        console.log(`тут ${car.address}`);   
+        const car = await fetchCarById(id); 
         setFoundItems(car)    
       } catch (error) {
         console.log(error);
@@ -31,7 +29,6 @@ const ListCards = ({ items, onChangeFavoriteArrey }) => {
   };
 
   const onFavoriteArrey = id => {
-    console.log(id);
     onChangeFavoriteArrey(id);
   };
 

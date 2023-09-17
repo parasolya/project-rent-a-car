@@ -30,7 +30,6 @@ const FavoritesPage = () => {
         item.mileage >= parseInt(filterObject.from, 10) &&
         item.mileage <= parseInt(filterObject.to, 10)
     );
-    console.log(filteredArray);
     setFavoriteArray(filteredArray);
   };
 

@@ -87,6 +87,11 @@ background: #3470FF;
 margin-top: 28px 
 }
 
+.btnLearnMore:hover,
+.btnLearnMore:focus {
+  background-color: #0B44CD;
+}
+
 
 
 

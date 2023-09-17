@@ -9,15 +9,11 @@
 
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
-
-  
-
-
-   
+  background-size: cover;   
 }
 
 .title2 {
+  color: rgb(22, 23, 18);
   color: rgba(52, 112, 255, 1);
   font-family: Manrope;
   font-size: 18px;
@@ -25,11 +21,12 @@
   font-weight: 500;
   line-height: 32px;
 
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .title1 {
-  color: rgba(18, 20, 23, 1);
+  color: rgb(5, 45, 137);
   font-family: Manrope;
   font-size: 24px;
   font-style: normal;

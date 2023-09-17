@@ -26,10 +26,17 @@ font-weight: 500;
 line-height: 24px;
 }
 
+.link:hover,
+.link:focus {
+    font-weight: bold;
+    color: #0B44CD;
+}
+
 .link:global(.active) {
     font-weight: bold;
-    color: #0950f7;
+    color: #0B44CD;
 }
+
 
 .flagY {
     background-color: #e7f70a;

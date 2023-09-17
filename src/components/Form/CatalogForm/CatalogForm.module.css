@@ -54,6 +54,11 @@
   line-height: 20px;
 }
 
+.btnSubmit:hover,
+.btnSubmit:focus {
+  background-color: #0B44CD;
+}
+
 .btnItem {
   display: flex;
   justify-content: center;
