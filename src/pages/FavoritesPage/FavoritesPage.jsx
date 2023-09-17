@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import css from './FavoritesPage.module.css';
 import ListCards from '../../components/ListCards/ListCards';
 import CatalogForm from '../../components/Form/CatalogForm/CatalogForm';
 
@@ -40,9 +40,7 @@ const FavoritesPage = () => {
   };
 
   return (
-    <div>
-      <h1>FavoritesPage</h1>
-
+    <div className={css.page}>
       <div>
         <CatalogForm
           onSubmit={formSubmitCatalog}

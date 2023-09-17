@@ -1,6 +1,7 @@
 // import PropTypes from "prop-types";
 import { useState } from 'react';
 import css from "./CardCar.module.css";
+import { ReactComponent as Hart } from '../../images/hart.svg';
 
 
 
@@ -12,7 +13,7 @@ const CardCar = ( { id, img, address, model, year, rentalPrice, rentalCompany, t
   const city = arrayAddress[arrayAddress.length - 2];
 
   const [itemFavorite, setItemFavorite] = useState(false);   
-  const [buttonColor, setButtonColor] = useState('white'); 
+  const [buttonState, setButtonState] = useState('inactive'); 
  
 
  
@@ -41,12 +42,12 @@ const CardCar = ( { id, img, address, model, year, rentalPrice, rentalCompany, t
   if (isObjectWithIdExists(id)) {
     if (!itemFavorite) {
       setItemFavorite(true);
-      setButtonColor('red');
+      setButtonState('active');
     }
   } else {
     if (itemFavorite) {
       setItemFavorite(false);
-      setButtonColor('white');
+      setButtonState('inactive');
     }
   }
 
@@ -63,7 +64,7 @@ const CardCar = ( { id, img, address, model, year, rentalPrice, rentalCompany, t
       // Якщо об'єкт існує, то видаляємо його з масиву
       myArray = myArray.filter((i) => i.id !== id);
       setItemFavorite(false);
-      setButtonColor('white');
+      setButtonState('inactive');
     } else {
       // Якщо об'єкта немає, то додаємо його до масиву
       const newObject = {
@@ -72,7 +73,7 @@ const CardCar = ( { id, img, address, model, year, rentalPrice, rentalCompany, t
       console.log(newObject);
       myArray.push(newObject);
       setItemFavorite(true);
-      setButtonColor('red');
+      setButtonState('active');
     }
   
     // Зберігаємо оновлений масив у локальному сховищі
@@ -85,25 +86,26 @@ const CardCar = ( { id, img, address, model, year, rentalPrice, rentalCompany, t
     <div className={css.wrapper}>
        <img className={css.cardImg} src={img} alt="car"/> 
      <div>
-        <div>
-        <h2>{`${model}, ${year}`}</h2>
+        <div className={css.titleWrapper}>
+        <h2 className={css.title}>{`${model}, ${year}`}</h2>
          <p>{rentalPrice}</p>
          </div>
          <div>
-           <p>{city}<span>|</span>{country}<span>|</span>{rentalCompany}</p>
-           <p>{type}<span>|</span>{make}<span>|</span>{mileage}<span>|</span>{}</p>
+           <p className={css.info}>{city}<span className={css.dash}>|</span>{country}<span className={css.dash}>|</span>{rentalCompany}</p>
+           <p className={css.info}>{type}<span className={css.dash}>|</span>{make}<span className={css.dash}>|</span>{mileage}<span className={css.dash}>|</span>{}</p>
         </div>
      </div>
       <div>   
-          <button onClick={() => onLearnMore(id)}>Learn more</button>   
+          <button className={`${css.btnLearnMore} `} onClick={() => onLearnMore(id)}>Learn more</button>   
   
     </div>
     <div>   
-    <button   
-        style={{ backgroundColor: buttonColor }}
+    <button className={`${css.btnHart} `}
+        
         onClick={() => toggleObjectWithId(id)}
       >
-        Hart
+        <Hart  fill={buttonState === "active" ? "#3470FF" : "none"}
+        stroke={buttonState === "active" ? "#3470FF" : "white"} />
       </button>  
   
     </div>

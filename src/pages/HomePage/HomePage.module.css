@@ -2,12 +2,43 @@
     background-image: url("images/car.jpg");
     max-width: 1600px;
   height: 550px;
-  padding: 20px 0 0px 0; 
+  /* padding: 20px 0 0px 0;  */
 
   margin-left: auto;
   margin-right: auto;
 
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;;
+  background-size: cover;
+
+  
+
+
+   
+}
+
+.title2 {
+  color: rgba(52, 112, 255, 1);
+  font-family: Manrope;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px;
+
+  margin-top: 20px;
+}
+
+.title1 {
+  color: rgba(18, 20, 23, 1);
+  font-family: Manrope;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px;
+
+  margin-top: 20px;
+}
+
+.wrapperTitle {
+  text-align: center;
 }

@@ -1,0 +1,27 @@
+.page {
+    width: 1440px;
+}
+
+.btnLoadMore {
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    border: none; 
+  outline: none;
+   
+    background-color: transparent;
+    margin: 100px auto 150px auto;
+
+}
+.textLoadMore {
+    width: 79px;
+    height: 24px;
+    color: #3470FF;
+font-family: Manrope;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px; 
+text-decoration-line: underline;
+}

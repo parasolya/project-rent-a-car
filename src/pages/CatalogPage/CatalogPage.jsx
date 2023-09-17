@@ -3,7 +3,7 @@ import ListCards from '../../components/ListCards/ListCards';
 import items from '../../dataFile/advertsCars.json';
 import carBrand from '../../dataFile/makes.json';
 import { fetchCars, fetchCarById, fetchDataAll } from '../../loadAPI.js';
-
+import css from './CatalogPage.module.css';
 
 import CatalogForm from '../../components/Form/CatalogForm/CatalogForm';
 
@@ -89,8 +89,7 @@ const CatalogPage = () => {
   };
 
   return (
-    <div>
-      <h1>CatalogPage</h1>
+    <div className={css.page}>      
       <div>
         <CatalogForm
           onSubmit={formSubmitCatalog}
@@ -99,6 +98,8 @@ const CatalogPage = () => {
         />
       </div>
       {loading ? 'Loading...' : <ListCards items={filteredArray}  onChangeFavoriteArrey={changeFavorite} />}
+      <div>
+      
       <button
         onClick={() => {
           if (hasNextPage) {
@@ -107,10 +108,11 @@ const CatalogPage = () => {
           }
         }}
         style={{ display: hasNextPage ? 'block' : 'none' }}
-      >
-        Load more
+        className={css.btnLoadMore} 
+      > <p className={css.textLoadMore} >Load more</p>
+        
       </button>
-    
+      </div>
     </div>
   );
 };

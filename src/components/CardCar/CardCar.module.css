@@ -1,32 +1,90 @@
-
-
 .wrapper {    
-    flex-basis: calc((100% - 40px) / 3);
-    width: 400px;
+  position: relative;
+    flex-basis: calc((100% - 87px) / 4);
+    width: 275px;
+    /* padding-top: 14px; */
 }
-  
-
-
 
 .textBox {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
    overflow: hidden;
-     height: 96px;
+     height: 40px;
      margin: 24px 0;
 }
+.titleWrapper {
+  display: flex;
+  flex-wrap: wrap;
+   align-items: center;
+ justify-content: space-between;
+ margin: 14px 0 8px 0;
+}
 
+.title {
+  color: #121417;
+
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px
+}
+
+.dash {
+  margin: 0 6px;
+}
 .cardImg {
   background-position: center top;
   background-size: cover;
   
-   border-radius: 8px;
-
-   
-     height: 400px;
+  border-radius: 14px;
+   margin: 0; /* Додайте цей рядок */
+   padding: 0;
+   /* width: 274px; */
+     height: 268px;
    }
 
 
 .info {
-   margin-top: 24px;
+   margin-top: 0px;
+   font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: 18px;
+color: rgba(18, 20, 23, 0.50);
+}
+
+ .btnHart {
+  position: absolute;
+  border: none; 
+  outline: none;
+  top: 14px; 
+  right: 14px;
+  width: "20px";
+
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+ 
+            height: "20px";
+            display: "flex";
+            justify-content: "center";
+            align-items: "center";
+}
+
+.btnLearnMore {
+  border: none; 
+  outline: none;
+  width: 100%;
+height: 44px;
+padding: 12px 99px;
+justify-content: center;
+align-items: center;
+ 
+border-radius: 12px;
+background: #3470FF;
+
+margin-top: 28px 
 }
 
 

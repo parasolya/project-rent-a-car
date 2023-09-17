@@ -1,5 +1,4 @@
 @import-normalize; /* bring in normalize.css styles */
-/* @import url('./styles/fonts.css'); */
 
 body {
   margin: 0;
@@ -68,6 +67,4 @@ div,
   }
 
 
-  .test {
-    flex-wrap: wrap;
-  }
+  

@@ -19,6 +19,8 @@ const Navbar = ()=> {
         <ul className={styles.menu}>
             {elements}
         </ul>
+        <div className={styles.flagY}></div>
+        <div className={styles.flagB}></div>
         </div>
     )
 }

@@ -1,17 +1,118 @@
+.wrapper {
+    margin: 150px 290px 50px 290px;
+}
 .formList {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    margin: 100px 50px;
+    /* flex-wrap: wrap; */
+    gap: 18px;
+    /* align-items: center; */
 }
 
 .formItem {
-    width: 200px;
+    /* width: 200px; */
 }
 
 .form {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    width: 1200px;
+   align-items: center;
+    
 }
+.listSelect {
+    display: flex;
+    justify-content: center;
+   
+   gap: 18px;
+}
+
+.listInput {
+    display: flex;
+    
+    justify-content: center;
+   align-items: center;
+}
+
+.titleItem {
+    color: #8A8A89;
+font-family: Manrope;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: 18px;
+margin-bottom: 8px;
+}
+
+.blockInput {
+    /* display: flex;
+    flex-direction: row; */
+    /* justify-content: center; */
+   /* align-items: center; */
+}
+
+.btnSubmit {
+    border: none; 
+  outline: none;
+  display: flex;
+padding: 14px 44px;
+justify-content: center;
+align-items: center;
+border-radius: 12px;
+background: #3470FF;
+
+color: var(--White, #FFF);
+font-family: Manrope;
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: 20px;
+
+/* margin: auto 0; */
+}
+
+.btnItem {
+    display: flex;
+    justify-content: center;
+   align-items: end;
+}
+
+input {
+    border: 0px solid transparent;
+    
+    -webkit-border-radius: 3px; 
+    -moz-border-radius: 3px; 
+    -khtml-border-radius: 3px; 
+    /* background: #ffffff !important;  */
+    outline: none; 
+    width: 160px;
+height: 48px; 
+    color: #cccccc; 
+    font-size: 11px; 
+    font-family: Tahoma; 
+    color: #121417;
+font-family: Manrope;
+font-size: 18px;
+font-style: normal;
+font-weight: 500;
+line-height: 20px;
+padding: 0;
+border-radius: 14px 0px 0px 14px;
+
+background: #F7F7FB;
+ }
+
+ .inputRight {
+    border-radius: 0px 14px 14px 0px;
+
+ }
+ .inputLeft {
+    border-radius: 14px 0px 0px 14px;
+border-right: 1px solid rgba(138, 138, 137, 0.20);
+
+ }
+
+ .select {
+    min-width: 100px;
+ }
+
+
