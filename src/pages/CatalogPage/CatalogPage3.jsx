@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import ListCards from '../../components/ListCards/ListCards';
 import items from '../../dataFile/advertsCars.json';
 import carBrand from '../../dataFile/makes.json';
-import { fetchCars, fetchCarById, fetchDataAll } from '../../loadAPI.js';
+import { fetchCars, fetchCarById } from '../../loadAPI.js';
 
 
 import CatalogForm from '../../components/Form/CatalogForm/CatalogForm';
@@ -10,28 +10,22 @@ import CatalogForm from '../../components/Form/CatalogForm/CatalogForm';
 const CatalogPage = () => {
   const [filteredArray, setFilteredArray] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [hasNextPage, setHasNextPage] = useState(true); // Додаємо стан для перевірки наявності наступної сторінки
 
-  useEffect(() => {
-    fetchData(currentPage);
-  }, [currentPage]);
+  useEffect(() => { 
+    fetchData();
+  }, []);
 
-  const fetchData = async (page) => {
+  const fetchData = async () => {
     try {
       setLoading(true);
-      const response = await fetchCars(page, 8); // Завантажуємо 8 автомобілів на сторінку
-      if (response.length === 0) {
-        // Якщо відповідь порожня, то немає наступної сторінки
-        setHasNextPage(false);
-      } else {
-        setFilteredArray(response);
-      }
+      const allCars = await fetchCars();
+      console.log(allCars);
+      setFilteredArray(allCars);
       setLoading(false);
     } catch (error) {
-      console.error(error);
-      // Обробка помилки
-    } finally {
+      console.log(error);        
+    }
+     finally {
       setLoading(false);
     }
   };
@@ -98,19 +92,7 @@ const CatalogPage = () => {
           optionsCarPrice={optionsCarPrice}
         />
       </div>
-      {loading ? 'Loading...' : <ListCards items={filteredArray}  onChangeFavoriteArrey={changeFavorite} />}
-      <button
-        onClick={() => {
-          if (hasNextPage) {
-            const nextPage = currentPage + 1;
-            setCurrentPage(nextPage);
-          }
-        }}
-        style={{ display: hasNextPage ? 'block' : 'none' }}
-      >
-        Load more
-      </button>
-    
+      {loading ? 'Loading...' : <ListCards items={filteredArray} onChangeFavoriteArrey={changeFavorite} />}
     </div>
   );
 };

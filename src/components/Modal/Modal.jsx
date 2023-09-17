@@ -5,6 +5,11 @@ const Modal = ({ passObject, onToggleModal, isOpen}) => {
 
     console.log(`в модалці ${passObject}`);
     
+
+//     const addressObject = passObject[0].address; // Отримуємо об'єкт адреси
+// const address = `${addressObject.street}, ${addressObject.city}, ${addressObject.country}`;
+// console.log(address);
+    
     const arrayAddress = passObject.address.split(",");
   const country = arrayAddress[arrayAddress.length - 1];
   const city = arrayAddress[arrayAddress.length - 2];

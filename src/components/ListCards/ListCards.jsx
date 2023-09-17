@@ -2,45 +2,52 @@ import { useState } from 'react';
 // import PropTypes from 'prop-types';
 import carArray from '../../dataFile/advertsCars.json';
 import CardCar from '../CardCar/CardCar';
-import Modal from "../Modal/Modal";
+import Modal from '../Modal/Modal';
 import { fetchCarById } from '../../loadAPI.js';
 
-import css from "./ListCards.module.css";
+import css from './ListCards.module.css';
 
-
-
-const ListCards = ({ items, 
-  onChangeFavoriteArrey 
-}) => {
-
+const ListCards = ({ items, onChangeFavoriteArrey }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [foundItems, setFoundItems] = useState({});
+  const [foundItems, setFoundItems] = useState(null);
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
 
-  const handleLearnMore = (id) => {
+  const handleLearnMore = id => {
     toggleModal();
-    const foundItems = carArray.filter(item => item.id === id);
+    // const foundItems = carArray.filter(item => item.id === id);
 
-if (foundItems.length > 0) {
-  // Знайдено один або декілька елементів з вказаним id
-  setFoundItems(foundItems[0]);
-} else {
-  // Елементів з таким id не знайдено
-  console.log("Елементів не знайдено");
-}
-  }
+    // if (foundItems.length > 0) {
+    //   setFoundItems(foundItems[0]);
+    // } else {
+    //   console.log('Елементів не знайдено');
+    // }
+    const fetchData = async () => {
+      try {        
+        const car = await fetchCarById(id);
+        console.log(`тут ${car}`);
+        console.log(`тут ${car.address}`);   
+        setFoundItems(car)    
+      } catch (error) {
+        console.log(error);
+              }
+    };
+    fetchData();
+  };
 
-  const onFavoriteArrey = (id) => {
-    console.log(id)
-    onChangeFavoriteArrey(id)
-  }
- 
+  const onFavoriteArrey = id => {
+    console.log(id);
+    onChangeFavoriteArrey(id);
+  };
+
   const elements = items.map(item => (
-    <CardCar key={item.id}  {...item} 
-    onChangeFavoriteArrey={onFavoriteArrey} getLearnMore={handleLearnMore}
+    <CardCar
+      key={item.id}
+      {...item}
+      onChangeFavoriteArrey={onFavoriteArrey}
+      getLearnMore={handleLearnMore}
     />
   ));
 
@@ -49,8 +56,12 @@ if (foundItems.length > 0) {
   return (
     <>
       <ul className={css.wrapper}>{elements}</ul>
-      {isModalOpen && (
-        <Modal isOpen={isModalOpen} passObject={foundItems}  onToggleModal={toggleModal}/>
+      {isModalOpen && foundItems && (
+        <Modal
+          isOpen={isModalOpen}
+          passObject={foundItems}
+          onToggleModal={toggleModal}
+        />
       )}
     </>
   );
