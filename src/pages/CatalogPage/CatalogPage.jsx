@@ -74,15 +74,26 @@ const CatalogPage = () => {
     const fetchData = async () => {
       try {
         
-        const Car = await fetchCarById(id);
-        console.log(`тут ${Car}`);
+        const Cars = await fetchDataAll();
+        console.log(`тут ${Cars}і`); 
+        const idCounts = {};       
+        items.forEach((item) => {
+          const { id } = item;
+          if (idCounts[id]) {
+            idCounts[id]++;
+          } else {
+            idCounts[id] = 1;
+          }
+        });
         
-       
+        // Зараз у вас є об'єкт idCounts, який містить кількість повторень для кожного ід
+        
+        // Виведіть ід, які повторюються більше одного разу
+        const duplicateIds = Object.keys(idCounts).filter((id) => idCounts[id] > 1);
+        
+        console.log('Повторюючіся ід:', duplicateIds);
       } catch (error) {
         console.log(error);
-        //         // Notiflix.Report.failure(
-        //         //   'Sorry, there are no cars today. Please try again next time.'
-        //         // );
       }
     };
     fetchData();

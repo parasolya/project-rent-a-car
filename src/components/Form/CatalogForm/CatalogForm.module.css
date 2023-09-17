@@ -9,10 +9,6 @@
     /* align-items: center; */
 }
 
-.formItem {
-    /* width: 200px; */
-}
-
 .form {
     display: flex;
     justify-content: center;
@@ -41,13 +37,6 @@ font-style: normal;
 font-weight: 500;
 line-height: 18px;
 margin-bottom: 8px;
-}
-
-.blockInput {
-    /* display: flex;
-    flex-direction: row; */
-    /* justify-content: center; */
-   /* align-items: center; */
 }
 
 .btnSubmit {
