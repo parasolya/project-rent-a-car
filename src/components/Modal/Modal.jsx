@@ -50,35 +50,34 @@ const toggleModal =() => {
         <div className={css.modalBackdrop} onClick={handleBackdropClick}>
         <div className={css.modal}>
            <div className={css.wrapper}>
-       <img className={css.cardImg} src={passObject.img} alt="car"/> 
+       <img className={css.cardImg} src={passObject.img || ''} alt="car"/> 
      <div>
         <div className={css.titleWrapper}>
         {/* <h2 className={css.title} >{`${passObject.model}, ${passObject.year}`}</h2> */}
-        <h2 className={css.title} >{passObject.make}<span className={css.accentСolor}>{` ${passObject.model}`}</span> {`, ${passObject.year}`}</h2>    
+        <h2 className={css.title} >{passObject.make || ''}<span className={css.accentСolor}>{`${passObject.model}` || ''}</span> {`, ${passObject.year}` || ''}</h2>    
          </div>
          <div>
-           <p className={css.info}>{city}<span className={css.dash}>|</span>{country}<span className={css.dash}>|</span>{passObject.rentalCompany}</p>
-           <p className={css.info}>{passObject.type}<span className={css.dash}>|</span>{passObject.make}<span className={css.dash}>|</span>{passObject.mileage}<span className={css.dash}>|</span>{}</p>
+           <p className={css.info}>{city || ''}<span className={css.dash}>|</span>{country || ''}<span className={css.dash}>|</span>id: {passObject.id || ''}<span className={css.dash}>|</span>Year: {passObject.year || ''}</p>
+           <p className={css.info}>Fuel Consumption: {passObject.fuelConsumption || ''}<span className={css.dash}>|</span>Engine Size: {passObject.engineSize || ''}</p>
         </div>
-        <p className={css.description}>{passObject.description}</p>
+        <p className={css.description}>{passObject.description || ''}</p>
         <div >
        
-        <h3 className={css.titleAccessories} >Accessories and functionalities:</h3>
+        <h3 className={css.titleAccessories || ''} >Accessories and functionalities:</h3>
         
          
-           <p className={css.info}>{city}<span className={css.dash}>|</span>{country}<span className={css.dash}>|</span>{passObject.rentalCompany}</p>
-           <p className={css.info}>{passObject.type}<span className={css.dash}>|</span>{passObject.make}<span className={css.dash}>|</span>{passObject.mileage}<span className={css.dash}>|</span>{}</p>
-               
+           <p className={css.info}>{passObject.accessories[0] || ''}<span className={css.dash}>|</span>{passObject.accessories[1] || ''}<span className={css.dash}>|</span>{passObject.accessories[2] || ''}</p>
+           <p className={css.info}>{passObject.functionalities[0] || ''}<span className={css.dash}>|</span>{passObject.functionalities[1] || ''}<span className={css.dash}>|</span>{passObject.functionalities[2] || ''}</p>
          </div>
          <div >
        
         <h3 className={css.titleConditions} >Rental Conditions: </h3>
         <ul className={css.listConditions}>
-          <li className={css.itemConditions}><p>Minimum age :</p></li>
+          <li className={css.itemConditions}><p>Minimum age : <span className={css.value}>25</span></p></li>
           <li className={css.itemConditions}><p>Valid driver’s license</p></li>
-          <li className={css.itemConditions}><p>Security deposite required </p></li>
-          <li className={css.itemConditions}><p>Mileage:</p></li>
-          <li className={css.itemConditions}><p>Price: <span className={css.value}>{passObject.rentalPrice}</span></p></li>
+          <li className={css.itemConditions}><p>Security deposite required</p></li>
+          <li className={css.itemConditions}><p>Mileage: <span className={css.value}>{passObject.mileage || ''}</span></p></li>
+          <li className={css.itemConditions}><p>Price: <span className={css.value}>{passObject.rentalPrice || ''}</span></p></li>
         </ul>
         
          </div>

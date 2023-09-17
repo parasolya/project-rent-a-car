@@ -17,17 +17,9 @@ export const fetchCars = async (page = 1, limit = 8) => {
         page,
       },
     });
-    console.log(data);
     return data;
   };
 
-
-// export const fetchCarById = async id => {
-//   const { data } = await axios.get(
-//     `${baseURL}/adverts/${id}`
-//     );
-//     return data;
-// };
 
 export const fetchCarById = async (id) => {
     try {
