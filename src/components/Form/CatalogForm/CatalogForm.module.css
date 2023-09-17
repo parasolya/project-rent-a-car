@@ -1,107 +1,93 @@
 .wrapper {
-    margin: 150px 290px 50px 290px;
+  margin: 150px 290px 50px 290px;
 }
 .formList {
-    display: flex;
-    justify-content: center;
-    /* flex-wrap: wrap; */
-    gap: 18px;
-    /* align-items: center; */
+  display: flex;
+  justify-content: center;
+  gap: 18px;
 }
 
 .form {
-    display: flex;
-    justify-content: center;
-   align-items: center;
-    
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .listSelect {
-    display: flex;
-    justify-content: center;
-   
-   gap: 18px;
+  display: flex;
+  justify-content: center;
+
+  gap: 18px;
 }
 
 .listInput {
-    display: flex;
-    
-    justify-content: center;
-   align-items: center;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
 }
 
 .titleItem {
-    color: #8A8A89;
-font-family: Manrope;
-font-size: 14px;
-font-style: normal;
-font-weight: 500;
-line-height: 18px;
-margin-bottom: 8px;
+  color: #8a8a89;
+  font-family: Manrope;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  margin-bottom: 8px;
 }
 
 .btnSubmit {
-    border: none; 
+  border: none;
   outline: none;
   display: flex;
-padding: 14px 44px;
-justify-content: center;
-align-items: center;
-border-radius: 12px;
-background: #3470FF;
+  padding: 14px 44px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  background: #3470ff;
 
-color: var(--White, #FFF);
-font-family: Manrope;
-font-size: 14px;
-font-style: normal;
-font-weight: 600;
-line-height: 20px;
-
-/* margin: auto 0; */
+  color: var(--White, #fff);
+  font-family: Manrope;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
 }
 
 .btnItem {
-    display: flex;
-    justify-content: center;
-   align-items: end;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 input {
-    border: 0px solid transparent;
-    
-    -webkit-border-radius: 3px; 
-    -moz-border-radius: 3px; 
-    -khtml-border-radius: 3px; 
-    /* background: #ffffff !important;  */
-    outline: none; 
-    width: 160px;
-height: 48px; 
-    color: #cccccc; 
-    font-size: 11px; 
-    font-family: Tahoma; 
-    color: #121417;
-font-family: Manrope;
-font-size: 18px;
-font-style: normal;
-font-weight: 500;
-line-height: 20px;
-padding: 0;
-border-radius: 14px 0px 0px 14px;
+  border: 0px solid transparent;
 
-background: #F7F7FB;
- }
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  outline: none;
+  width: 160px;
+  height: 48px;
+  color: #cccccc;
+  font-size: 11px;
+  font-family: Tahoma;
+  color: #121417;
+  font-family: Manrope;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  padding: 0;
+  border-radius: 14px 0px 0px 14px;
 
- .inputRight {
-    border-radius: 0px 14px 14px 0px;
+  background: #f7f7fb;
+}
 
- }
- .inputLeft {
-    border-radius: 14px 0px 0px 14px;
-border-right: 1px solid rgba(138, 138, 137, 0.20);
-
- }
-
- .select {
-    min-width: 100px;
- }
-
-
+.inputRight {
+  border-radius: 0px 14px 14px 0px;
+}
+.inputLeft {
+  border-radius: 14px 0px 0px 14px;
+  border-right: 1px solid rgba(138, 138, 137, 0.2);
+}

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import ListCards from '../../components/ListCards/ListCards';
 import items from '../../dataFile/advertsCars.json';
 import carBrand from '../../dataFile/makes.json';
-import { fetchCars, fetchCarById, fetchDataAll } from '../../loadAPI.js';
+import { fetchCars, fetchDataAll } from '../../loadAPI.js';
 import css from './CatalogPage.module.css';
 
 import CatalogForm from '../../components/Form/CatalogForm/CatalogForm';

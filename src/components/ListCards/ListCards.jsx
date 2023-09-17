@@ -1,6 +1,5 @@
 import { useState } from 'react';
 // import PropTypes from 'prop-types';
-import carArray from '../../dataFile/advertsCars.json';
 import CardCar from '../CardCar/CardCar';
 import Modal from '../Modal/Modal';
 import { fetchCarById } from '../../loadAPI.js';
@@ -17,13 +16,7 @@ const ListCards = ({ items, onChangeFavoriteArrey }) => {
 
   const handleLearnMore = id => {
     toggleModal();
-    // const foundItems = carArray.filter(item => item.id === id);
-
-    // if (foundItems.length > 0) {
-    //   setFoundItems(foundItems[0]);
-    // } else {
-    //   console.log('Елементів не знайдено');
-    // }
+    
     const fetchData = async () => {
       try {        
         const car = await fetchCarById(id);
