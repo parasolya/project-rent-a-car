@@ -22,14 +22,22 @@ const FavoritesPage = () => {
  
   const formSubmitCatalog = data => {
     const filterObject = data;
-
-    const filteredArray = favoriteArray.filter(
+    const newCarArray = favoriteArray.map(item => {
+      const rentalPrice = parseInt(item.rentalPrice.replace(/\D/g, ''), 10);
+     
+      return {
+        ...item,
+        rentalPrice,
+      };
+    });
+    const filteredArray = newCarArray.filter(
       item =>
         item.make === filterObject.make &&
         item.rentalPrice <= filterObject.rentalPrice &&
         item.mileage >= parseInt(filterObject.from, 10) &&
         item.mileage <= parseInt(filterObject.to, 10)
     );
+    
     setFavoriteArray(filteredArray);
   };
 

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import addCommas from '../../../shared/addCommas';
+// import addCommas from '../../../shared/addCommas';
 import css from './CatalogForm.module.css';
 import Select from 'react-select';
 
@@ -174,7 +174,6 @@ const CatalogForm = ({ onSubmit, optionsCarBrand, optionsCarPrice }) => {
   const [toValue, setToValue] = useState('');
 
   const handleInputChange = e => {
-    console.log(e);
     const { name, value } = e.currentTarget;
     switch (name) {
       case 'from':
@@ -190,13 +189,13 @@ const CatalogForm = ({ onSubmit, optionsCarBrand, optionsCarPrice }) => {
 
   const handlePassParameters = e => {
     e.preventDefault();
+    
     const searchParameters = {
       make: selectedOptionBrand.value,
       rentalPrice: selectedOptionPrice.value,
       from: fromValue,
       to: toValue,
     };
-    console.log(searchParameters);
     onSubmit(searchParameters);
     setFromValue('');
     setToValue('');
@@ -251,7 +250,7 @@ const CatalogForm = ({ onSubmit, optionsCarBrand, optionsCarPrice }) => {
                     name="from"
                     required
                     type="text"
-                    value={addCommas(fromValue)}
+                    value={fromValue}
                     onChange={e => {
                       handleInputChange(e);
                     }}
@@ -268,7 +267,7 @@ const CatalogForm = ({ onSubmit, optionsCarBrand, optionsCarPrice }) => {
                     //   pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
                     // title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                     type="text"
-                    value={addCommas(toValue)}
+                    value={toValue}
                     onChange={e => {
                       handleInputChange(e);
                     }}

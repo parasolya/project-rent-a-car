@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import ListCards from '../../components/ListCards/ListCards';
-import items from '../../dataFile/advertsCars.json';
 import carBrand from '../../dataFile/makes.json';
-import { fetchCars } from '../../loadAPI.js';
+import { fetchCars, fetchDataAll } from '../../loadAPI.js';
 import css from './CatalogPage.module.css';
 
 import CatalogForm from '../../components/Form/CatalogForm/CatalogForm';
@@ -11,10 +10,21 @@ const CatalogPage = () => {
   const [filteredArray, setFilteredArray] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const [hasNextPage, setHasNextPage] = useState(true); // Додаємо стан для перевірки наявності наступної сторінки
+  const [hasNextPage, setHasNextPage] = useState(true);
+  const [allCars, setAllCars] = useState([]);
 
   useEffect(() => {
     fetchData(currentPage);
+    const fetchAllData = async () => {
+      try {
+        const allCars = await fetchDataAll(); 
+        
+        setAllCars(allCars)
+      } catch (error) {
+        console.error(error);
+      } 
+    };
+    fetchAllData();
   }, [currentPage]);
 
   const fetchData = async page => {
@@ -47,23 +57,22 @@ const CatalogPage = () => {
 
   const formSubmitCatalog = data => {
     const filterObject = data;
-    const newCarArray = items.map(item => {
+    const newCarArray = allCars.map(item => {
       const rentalPrice = parseInt(item.rentalPrice.replace(/\D/g, ''), 10);
-
       return {
         ...item,
         rentalPrice,
       };
     });
 
-    const filteredArray = newCarArray.filter(
+    const filteredCars = newCarArray.filter(
       item =>
         item.make === filterObject.make &&
         item.rentalPrice <= filterObject.rentalPrice &&
         item.mileage >= parseInt(filterObject.from, 10) &&
         item.mileage <= parseInt(filterObject.to, 10)
     );
-    setFilteredArray(filteredArray);
+    setFilteredArray(filteredCars);
   };
 
   const changeFavorite = id => {};
