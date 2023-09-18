@@ -1,5 +1,6 @@
 .page {
   width: 1440px;
+  margin-bottom: 150px;
 }
 
 .btnLoadMore {
@@ -11,7 +12,7 @@
   outline: none;
 
   background-color: transparent;
-  margin: 100px auto 150px auto;
+  margin: 100px auto 0px auto;
 }
 
 .textLoadMore {

@@ -8,10 +8,11 @@ import CatalogForm from '../../components/Form/CatalogForm/CatalogForm';
 
 const CatalogPage = () => {
   const [filteredArray, setFilteredArray] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [hasNextPage, setHasNextPage] = useState(true);
   const [allCars, setAllCars] = useState([]);
+  const [filtration, setFiltration] = useState(false);
 
   useEffect(() => {
     fetchData(currentPage);
@@ -56,6 +57,7 @@ const CatalogPage = () => {
   const optionsCarPrice = carPrice.map(make => ({ label: make, value: make }));
 
   const formSubmitCatalog = data => {
+    setFiltration(true);
     const filterObject = data;
     const newCarArray = allCars.map(item => {
       const rentalPrice = parseInt(item.rentalPrice.replace(/\D/g, ''), 10);
@@ -73,6 +75,7 @@ const CatalogPage = () => {
         item.mileage <= parseInt(filterObject.to, 10)
     );
     setFilteredArray(filteredCars);
+    
   };
 
   const changeFavorite = id => {};
@@ -94,7 +97,7 @@ const CatalogPage = () => {
           onChangeFavoriteArrey={changeFavorite}
         />
       )}
-      <div>
+      { !filtration && (<div>
         <button
           onClick={() => {
             if (hasNextPage) {
@@ -108,7 +111,7 @@ const CatalogPage = () => {
           {' '}
           <p className={css.textLoadMore}>Load more</p>
         </button>
-      </div>
+      </div>)}
     </div>
   );
 };
