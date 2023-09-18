@@ -13,9 +13,9 @@ const FavoritesPage = () => {
     label: make,
     value: make,
   }));
-  
+
   const carPrice = [];
-  for (let i = 10; i <= 100; i += 10) {
+  for (let i = 10; i <= 600; i += 10) {
     carPrice.push(i);
   }
   const optionsCarPrice = carPrice.map(make => ({ label: make, value: make }));

@@ -22,7 +22,7 @@ const customStyles1 = {
     }),
     dropdownIndicator: (provided, state) => ({
       ...provided,
-      transform: state.selectProps.menuIsOpen ? 'rotate(180deg)' : null, // Поворачиваем стрелку при открытом списке
+      transform: state.selectProps.menuIsOpen ? 'rotate(180deg)' : null, 
     }),
   
   menu: base => {
@@ -41,10 +41,6 @@ const customStyles1 = {
     return {
       ...base,
       color: '#121417',
-// fontSize: '18px',
-// fontWeight: 500,
-// lineHeight: '20px',
-// paddingBottom: '14px'
     };
   },
 
@@ -79,7 +75,6 @@ const customStyles1 = {
         color: '#121417',
       },
       cursor: 'pointer',
-      // background: state.isSelected ? '#121417' : 'rgba(18, 20, 23, 0.20',
       background: 'white',
     };
   },
@@ -109,7 +104,7 @@ const customStyles2 = {
     }),
       dropdownIndicator: (provided, state) => ({
         ...provided,
-        transform: state.selectProps.menuIsOpen ? 'rotate(180deg)' : null, // Поворачиваем стрелку при открытом списке
+        transform: state.selectProps.menuIsOpen ? 'rotate(180deg)' : null, 
       }),
     
 
@@ -160,7 +155,6 @@ const customStyles2 = {
         color: '#121417',
       },
       cursor: 'pointer',
-      // background: state.isSelected ? '#121417' : 'rgba(18, 20, 23, 0.20',
       background: 'white',
     };
   },
