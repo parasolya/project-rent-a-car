@@ -1,5 +1,7 @@
 .wrapper {
-  background-image: url('images/car.jpg');
+  /* background-image: url('images/car.jpg'); */
+  background-image: url('images/lavander.jpg'); 
+  
   max-width: 1600px;
   height: 550px;
 
