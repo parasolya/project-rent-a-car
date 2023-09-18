@@ -1,50 +1,43 @@
 .wrapper {
-    background: white;
-    /* padding: 20px 0; */
-    
+  background: white;
 }
 
 .menu {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    
-    /* margin: 0; */
-    margin-top: 20px; 
-    margin-bottom: 20px;
-  
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .link {
-    text-decoration: none;
-    color: #3470FF;
-    display: inline-block;
-    padding: 5px 30px;
-    font-family: Manrope;
-font-size: 16px;
-font-style: normal;
-font-weight: 500;
-line-height: 24px;
+  text-decoration: none;
+  color: #3470ff;
+  display: inline-block;
+  padding: 5px 30px;
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
 }
 
 .link:hover,
 .link:focus {
-    font-weight: bold;
-    color: #0B44CD;
+  font-weight: bold;
+  color: #0b44cd;
 }
 
 .link:global(.active) {
-    font-weight: bold;
-    color: #0B44CD;
+  font-weight: bold;
+  color: #0b44cd;
 }
 
-
 .flagY {
-    background-color: #e7f70a;
-    height: 10px;
+  background-color: #e7f70a;
+  height: 10px;
 }
 
 .flagB {
-    background-color: #049cfb;
-    height: 10px;
+  background-color: #049cfb;
+  height: 10px;
 }
-

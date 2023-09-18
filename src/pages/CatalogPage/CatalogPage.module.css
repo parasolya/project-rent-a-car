@@ -1,33 +1,32 @@
 .page {
-    width: 1440px;
+  width: 1440px;
 }
 
 .btnLoadMore {
-    display: flex;
-    
-    justify-content: center;
-    align-items: center;
-    border: none; 
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  border: none;
   outline: none;
-   
-    background-color: transparent;
-    margin: 100px auto 150px auto;
+
+  background-color: transparent;
+  margin: 100px auto 150px auto;
 }
 
-
 .textLoadMore {
-    width: 79px;
-    height: 24px;
-    color: #3470FF;
-font-family: Manrope;
-font-size: 16px;
-font-style: normal;
-font-weight: 500;
-line-height: 24px; 
-text-decoration-line: underline;
+  width: 79px;
+  height: 24px;
+  color: #3470ff;
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  text-decoration-line: underline;
 }
 
 .textLoadMore:hover,
 .textLoadMore:focus {
-  color: #0B44CD;
+  color: #0b44cd;
 }

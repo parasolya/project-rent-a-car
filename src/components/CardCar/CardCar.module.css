@@ -1,33 +1,32 @@
-.wrapper {    
+.wrapper {
   position: relative;
-    flex-basis: calc((100% - 87px) / 4);
-    width: 275px;
-    /* padding-top: 14px; */
+  flex-basis: calc((100% - 87px) / 4);
+  width: 275px;
 }
 
 .textBox {
   display: flex;
   flex-direction: column;
   gap: 5px;
-   overflow: hidden;
-     height: 40px;
-     margin: 24px 0;
+  overflow: hidden;
+  height: 40px;
+  margin: 24px 0;
 }
 .titleWrapper {
   display: flex;
   flex-wrap: wrap;
-   align-items: center;
- justify-content: space-between;
- margin: 14px 0 8px 0;
+  align-items: center;
+  justify-content: space-between;
+  margin: 14px 0 8px 0;
 }
 
 .title {
   color: #121417;
 
-font-size: 16px;
-font-style: normal;
-font-weight: 500;
-line-height: 24px
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
 }
 
 .dash {
@@ -36,62 +35,56 @@ line-height: 24px
 .cardImg {
   background-position: center top;
   background-size: cover;
-  
+
   border-radius: 14px;
-   margin: 0; /* Додайте цей рядок */
-   padding: 0;
-   /* width: 274px; */
-     height: 268px;
-   }
-
-
-.info {
-   margin-top: 0px;
-   font-size: 12px;
-font-style: normal;
-font-weight: 400;
-line-height: 18px;
-color: rgba(18, 20, 23, 0.50);
+  margin: 0;
+  padding: 0;
+  height: 268px;
 }
 
- .btnHart {
+.info {
+  margin-top: 0px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  color: rgba(18, 20, 23, 0.5);
+}
+
+.btnHart {
   position: absolute;
-  border: none; 
+  border: none;
   outline: none;
-  top: 14px; 
+  top: 14px;
   right: 14px;
-  width: "20px";
+  width: '20px';
 
   font: inherit;
   color: inherit;
   background-color: transparent;
- 
-            height: "20px";
-            display: "flex";
-            justify-content: "center";
-            align-items: "center";
+
+  height: '20px';
+  display: 'flex';
+  justify-content: 'center';
+  align-items: 'center';
 }
 
 .btnLearnMore {
-  border: none; 
+  border: none;
   outline: none;
   width: 100%;
-height: 44px;
-padding: 12px 99px;
-justify-content: center;
-align-items: center;
- 
-border-radius: 12px;
-background: #3470FF;
+  height: 44px;
+  padding: 12px 99px;
+  justify-content: center;
+  align-items: center;
 
-margin-top: 28px 
+  border-radius: 12px;
+  background: #3470ff;
+
+  margin-top: 28px;
 }
 
 .btnLearnMore:hover,
 .btnLearnMore:focus {
-  background-color: #0B44CD;
+  background-color: #0b44cd;
 }
-
-
-
-

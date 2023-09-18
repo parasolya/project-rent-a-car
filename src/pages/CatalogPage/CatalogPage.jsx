@@ -17,12 +17,11 @@ const CatalogPage = () => {
     fetchData(currentPage);
   }, [currentPage]);
 
-  const fetchData = async (page) => {
+  const fetchData = async page => {
     try {
       setLoading(true);
-      const response = await fetchCars(page, 8); // Завантажуємо 8 автомобілів на сторінку
+      const response = await fetchCars(page, 8); 
       if (response.length === 0) {
-        // Якщо відповідь порожня, то немає наступної сторінки
         setHasNextPage(false);
       } else {
         setFilteredArray(response);
@@ -30,7 +29,6 @@ const CatalogPage = () => {
       setLoading(false);
     } catch (error) {
       console.error(error);
-      // Обробка помилки
     } finally {
       setLoading(false);
     }
@@ -48,14 +46,13 @@ const CatalogPage = () => {
   const optionsCarPrice = carPrice.map(make => ({ label: make, value: make }));
 
   const formSubmitCatalog = data => {
-    
     const filterObject = data;
     const newCarArray = items.map(item => {
-      const rentalPrice = parseInt(item.rentalPrice.replace(/\D/g, ''), 10); 
+      const rentalPrice = parseInt(item.rentalPrice.replace(/\D/g, ''), 10);
 
       return {
-        ...item, 
-        rentalPrice, 
+        ...item,
+        rentalPrice,
       };
     });
 
@@ -65,15 +62,14 @@ const CatalogPage = () => {
         item.rentalPrice <= filterObject.rentalPrice &&
         item.mileage >= parseInt(filterObject.from, 10) &&
         item.mileage <= parseInt(filterObject.to, 10)
-    );    
+    );
     setFilteredArray(filteredArray);
   };
 
-  const changeFavorite = (id) => {    
-  };
+  const changeFavorite = id => {};
 
   return (
-    <div className={css.page}>      
+    <div className={css.page}>
       <div>
         <CatalogForm
           onSubmit={formSubmitCatalog}
@@ -81,21 +77,28 @@ const CatalogPage = () => {
           optionsCarPrice={optionsCarPrice}
         />
       </div>
-      {loading ? 'Loading...' : <ListCards items={filteredArray}  onChangeFavoriteArrey={changeFavorite} />}
+      {loading ? (
+        'Loading...'
+      ) : (
+        <ListCards
+          items={filteredArray}
+          onChangeFavoriteArrey={changeFavorite}
+        />
+      )}
       <div>
-      
-      <button
-        onClick={() => {
-          if (hasNextPage) {
-            const nextPage = currentPage + 1;
-            setCurrentPage(nextPage);
-          }
-        }}
-        style={{ display: hasNextPage ? 'block' : 'none' }}
-        className={css.btnLoadMore} 
-      > <p className={css.textLoadMore} >Load more</p>
-        
-      </button>
+        <button
+          onClick={() => {
+            if (hasNextPage) {
+              const nextPage = currentPage + 1;
+              setCurrentPage(nextPage);
+            }
+          }}
+          style={{ display: hasNextPage ? 'block' : 'none' }}
+          className={css.btnLoadMore}
+        >
+          {' '}
+          <p className={css.textLoadMore}>Load more</p>
+        </button>
       </div>
     </div>
   );

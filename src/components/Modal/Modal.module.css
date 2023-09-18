@@ -2,21 +2,15 @@
   position: absolute;
   top: 150px;
   left: 496px;
-  
+
   background-color: rgb(103, 208, 120);
-  /* padding: 20px; */
+
   z-index: 10;
-  /* width: 541px; */
-/* height: 752px; */
-padding: 40px;
+  padding: 40px;
   border-radius: 24px;
-background: #FFF;
-  
-  /* max-height: calc(100vh - 20px); Висота екрану мінус 20px відступи */
+  background: #fff;
   overflow: auto;
 }
-
-/* Стилі для кнопки "Закрити" */
 
 .modalBackdrop {
   position: fixed;
@@ -24,12 +18,12 @@ background: #FFF;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(18, 20, 23, 0.50); 
+  background-color: rgba(18, 20, 23, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 100; /* Задайте вищий z-index, ніж для модального вікна */
-  overflow: auto; /* Додайте цей стиль */
+  z-index: 100;
+  overflow: auto;
 }
 
 .closeButton {
@@ -37,7 +31,6 @@ background: #FFF;
   top: 16px;
   right: 16px;
   cursor: pointer;
-  /* font-size: 24px; */
   color: #888;
   background: none;
   border: none;
@@ -47,26 +40,25 @@ background: #FFF;
 .cardImg {
   background-position: center top;
   background-size: cover;
-  
+
   border-radius: 14px;
-  
-   width: 461px;
-     height: 248px;
-   }
 
-   .info {
-    margin-top: 0px;
-    font-size: 12px;
- font-style: normal;
- font-weight: 400;
- line-height: 18px;
- color: rgba(18, 20, 23, 0.50);
- }
+  width: 461px;
+  height: 248px;
+}
 
- .wrapper {    
- 
-    width: 461px;
-    /* padding-top: 14px; */
+.info {
+  margin-top: 0px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  color: rgba(18, 20, 23, 0.5);
+}
+
+.wrapper {
+  width: 461px;
+  /* padding-top: 14px; */
 }
 
 .dash {
@@ -76,111 +68,110 @@ background: #FFF;
 .titleWrapper {
   display: flex;
   flex-wrap: wrap;
-   align-items: center;
- justify-content: space-between;
- margin: 14px 0 8px 0;
+  align-items: center;
+  justify-content: space-between;
+  margin: 14px 0 8px 0;
 }
 
 .title {
   color: #121417;
-font-family: Manrope;
-font-size: 18px;
-font-style: normal;
-font-weight: 500;
-line-height: 24px;
+  font-family: Manrope;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
 }
 .description {
   color: #121417;
-font-family: Manrope;
-font-size: 14px;
-font-style: normal;
-font-weight: 400;
-line-height: 20px;
+  font-family: Manrope;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
 
-margin-top: 14px;
+  margin-top: 14px;
 }
 .titleAccessories {
   color: #121417;
-font-family: Manrope;
-font-size: 14px;
-font-style: normal;
-font-weight: 500;
-line-height: 20px;
+  font-family: Manrope;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
 
-margin-top: 24px;
-margin-bottom: 8px;
+  margin-top: 24px;
+  margin-bottom: 8px;
 }
 
 .titleConditions {
   color: #121417;
-font-family: Manrope;
-font-size: 14px;
-font-style: normal;
-font-weight: 500;
-line-height: 20px;
+  font-family: Manrope;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
 
-margin-top: 24px;
-margin-bottom: 15px;
+  margin-top: 24px;
+  margin-bottom: 15px;
 }
 
 .listConditions {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;  
- justify-content: flex-start;
-  
+  align-items: flex-start;
+  justify-content: flex-start;
+
   gap: 8px 8px;
 }
-/* <div className={`${css.card} ${css.wrapper}`}> */
+
 .value {
-  color: #3470FF;
+  color: #3470ff;
   font-family: Montserrat;
   font-size: 12px;
   font-style: normal;
   font-weight: 600;
   line-height: 18px;
   letter-spacing: -0.24px;
-  
 }
 
 .itemConditions {
   color: #363535;
-font-family: Manrope;
-font-size: 12px;
-font-style: normal;
-font-weight: 400;
-line-height: 18px;
+  font-family: Manrope;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
 
-padding: 7px 14px;
+  padding: 7px 14px;
 
-border-radius: 35px;
-background: #F9F9F9;
+  border-radius: 35px;
+  background: #f9f9f9;
 }
 
 .btnRent {
   margin-top: 24px;
   border-radius: 12px;
-background: #3470FF;
-display: inline-flex;
-padding: 12px 50px;
-justify-content: center;
-align-items: center;
+  background: #3470ff;
+  display: inline-flex;
+  padding: 12px 50px;
+  justify-content: center;
+  align-items: center;
 
-color: var(--White, #FFF);
-font-family: Manrope;
-font-size: 14px;
-font-style: normal;
-font-weight: 600;
-line-height: 20px; 
-border: none; 
+  color: var(--White, #fff);
+  font-family: Manrope;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  border: none;
   outline: none;
 }
 
 .btnRent:hover,
 .btnRent:focus {
-  background-color: #0B44CD;
+  background-color: #0b44cd;
 }
 
 .accentСolor {
-  color: #3470FF;
+  color: #3470ff;
 }
