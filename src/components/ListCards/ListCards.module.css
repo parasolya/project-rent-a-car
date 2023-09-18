@@ -4,7 +4,7 @@
   flex-wrap: wrap;
   align-items: flex-start;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-start;
 
   gap: 50px 29px;
   margin: 0 128px;
