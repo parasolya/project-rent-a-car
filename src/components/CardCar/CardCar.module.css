@@ -82,6 +82,13 @@
   background: #3470ff;
 
   margin-top: 28px;
+
+  color: var(--White, #fff);
+  font-family: Manrope;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
 }
 
 .btnLearnMore:hover,
