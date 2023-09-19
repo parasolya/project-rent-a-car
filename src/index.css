@@ -5,9 +5,7 @@ body {
   padding: 0;
   font-family: 'Manrope', sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  display: flex;
-  justify-content: center;
+  -moz-osx-font-smoothing: grayscale; 
 
   height: 100vh;
 }
