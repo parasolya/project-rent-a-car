@@ -91,11 +91,11 @@ const CatalogPage = () => {
       </div>
       {loading ? (
         'Loading...'
-      ) : (
+      ) : (  (filteredArray.length !== 0) ?
         <ListCards
           items={filteredArray}
           onChangeFavoriteArrey={changeFavorite}
-        />
+        /> : (<div className={css.boxText}><p className={css.text}>All cars are booked, try again later. Good luck!</p></div>)
       )}
       { !filtration && (<div>
         <button

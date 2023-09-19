@@ -4,6 +4,7 @@ import ListCards from '../../components/ListCards/ListCards';
 import CatalogForm from '../../components/Form/CatalogForm/CatalogForm';
 
 const FavoritesPage = () => {
+
   const [favoriteArray, setFavoriteArray] = useState(
     () => JSON.parse(localStorage.getItem('favorite')) ?? []
   );
@@ -55,8 +56,9 @@ const FavoritesPage = () => {
           optionsCarPrice={optionsCarPrice}
         />
       </div>
-
+{ (favoriteArray.length !== 0) ?
       <ListCards items={favoriteArray} onChangeFavoriteArrey={changeFavorite} />
+      : (<div className={css.boxText}><p className={css.text}>You haven't added any cars to your favorites yet</p></div>)}
     </div>
   );
 };
